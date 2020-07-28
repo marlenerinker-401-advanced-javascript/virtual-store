@@ -5,14 +5,14 @@
 // Our global state object just for votes
 const initialState = {
   products: [
-    { category: 'category one', name: 'Product One', description: 'fun product', price: '$5.00', inventory: 0, isActive: false },
-    { category: 'category one', name: 'Product Two', description: 'fun product', price: '$5.00', inventory: 0, isActive: false },
-    { category: 'category two', name: 'Product Three', description: 'fun product', price: '$5.00', inventory: 0, isActive: false },
-    { category: 'category two', name: 'Product Four', description: 'fun product', price: '$5.00', inventory: 0, isActive: false },
-    { category: 'category three', name: 'Product Five', description: 'fun product', price: '$5.00', inventory: 0, isActive: false },
-    { category: 'category three', name: 'Product Six', description: 'fun product', price: '$5.00', inventory: 0, isActive: false },
-    { category: 'category four', name: 'Product Seven', description: 'fun product', price: '$5.00', inventory: 0, isActive: false },
-    { category: 'category four', name: 'Product Eight', description: 'fun product', price: '$5.00', inventory: 0, isActive: false },
+    { category: 'categoryone', name: 'Product One', description: 'fun product', price: '$5.00', inventory: 0, isActive: true },
+    { category: 'categoryone', name: 'Product Two', description: 'fun product', price: '$5.00', inventory: 0, isActive: true },
+    { category: 'categorytwo', name: 'Product Three', description: 'fun product', price: '$5.00', inventory: 0, isActive: false },
+    { category: 'categorytwo', name: 'Product Four', description: 'fun product', price: '$5.00', inventory: 0, isActive: false },
+    { category: 'categorythree', name: 'Product Five', description: 'fun product', price: '$5.00', inventory: 0, isActive: false },
+    { category: 'categorythree', name: 'Product Six', description: 'fun product', price: '$5.00', inventory: 0, isActive: false },
+    { category: 'categoryfour', name: 'Product Seven', description: 'fun product', price: '$5.00', inventory: 0, isActive: false },
+    { category: 'categoryfour', name: 'Product Eight', description: 'fun product', price: '$5.00', inventory: 0, isActive: false },
   ],
 };
 

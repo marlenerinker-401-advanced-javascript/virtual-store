@@ -1,8 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { List, ListItem } from '@material-ui/core';
+import { List, ListItem, Card, Typography, Paper } from '@material-ui/core';
 
-import { changeCategory } from '../store/categories.js';
+import categories, { changeCategory } from '../store/categories.js';
+
+const If = props => {
+  return props.condition ? props.children : null;
+};
 
 const Products = (props) => {
 
@@ -11,20 +15,22 @@ const Products = (props) => {
   console.log('props from products: ', props);
 
   return (
-    <section>
-      <h2>Products</h2>
+    
+    <Paper variant="outlined">
+      <Typography variant="h4" component="h4">Products</Typography>
       <List>
-        {props.products.products.map((category, idx) => (
-          <ListItem key={idx} onClick={() => props.changeCategory(category)}>{category.displayName}</ListItem>
+        {props.products.products.map((product, idx) => (
+          <If condition={product.category === props.categories.activeCategory.normalizedName}>
+            <Card variant="outlined">
+              <ListItem key={idx + '1'} >Product: {product.name}</ListItem>
+              <ListItem key={idx + '2'} >Description: {product.description}</ListItem>
+              <ListItem key={idx + '3'} >Price: {product.price}</ListItem>
+            </Card>
+          </If>
         ))}
       </List>
-      {/* <ul>
-        {props.categories.categories.map((category, idx) => (
-          <li key={idx} onClick={() => props.changeCategory(category.normalizedName)}>{category.displayName}</li>
-        ))}
-      </ul>
-      <p>Selected category: {props.categories.activeCategory}</p> */}
-    </section>
+    </Paper>
+    
   )
 }
 
@@ -34,7 +40,7 @@ const mapStateToProps = state => {
   console.log('state from products state', state);
 
   return {
-    // categories: state.categories,
+    categories: state.categories,
     // activeCategory: state.categories.activeCategory,
     products: state.products,
     
