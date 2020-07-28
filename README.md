@@ -35,6 +35,10 @@ None at this time
 - enzyme-adapter-react-16
 - react-test-renderer 
 - eslint-plugin-react
+- redux
+- redux-devtools-extension
+- @material-ui/core
+- @material-ui/icons
 <!-- - axios -->
 <!-- - react-bootstrap-4-pagination -->
 <!-- - dotenv -->
@@ -49,10 +53,11 @@ npm start
 
 #### Tests
 
-<!-- - Unit Tests: `npm test` (run from the `__tests__` folder to run all tests) -->
+- Unit Tests: `npm test` (run from the `__tests__` folder to run all tests) -->
 
-<!-- - Assertions Made: -->
-  <!-- -  -->
+- Assertions Made:
+  - Products will render correctly
+  - Categories will render correctly
 
 
 

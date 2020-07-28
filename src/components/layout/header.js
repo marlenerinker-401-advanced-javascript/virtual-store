@@ -1,5 +1,5 @@
 import React from 'react';
-import { Paper, Container, TextField, Box, Typography, List, ListItem, ListItemIcon, ListItemText, Divider, StylesProvider } from '@material-ui/core';
+import { Paper, Container, Typography } from '@material-ui/core';
 import { ShoppingCartOutlined } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -27,9 +27,9 @@ const Header = () => {
     <Paper>
       <Container maxWidth="fluid">
         <div className={classes.title}>
-          <Typography id="title" variant="h2" component="h2" gutterBottom>OUR STORE</Typography>
+          <Typography id="title" variant="h2" component="h2" gutterBottom>THE 401 STORE </Typography>
         </div>
-          <ShoppingCartOutlined className={classes.cart}/>
+          {/* <ShoppingCartOutlined className={classes.cart}/> */}
       </Container>
     </Paper>
 

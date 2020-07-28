@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { List, ListItem, Card, Typography, Paper } from '@material-ui/core';
 
-import categories, { changeCategory } from '../store/categories.js';
+
 
 const If = props => {
   return props.condition ? props.children : null;
@@ -10,16 +10,15 @@ const If = props => {
 
 const Products = (props) => {
 
-  // const { votes, increment } = props;
-  // const { state } = props;
   console.log('props from products: ', props);
 
   return (
     
     <Paper variant="outlined">
-      <Typography variant="h4" component="h4">Products</Typography>
+      <Typography id="product-title" variant="h4" component="h4">Products</Typography>
       <List>
         {props.products.products.map((product, idx) => (
+          // eslint-disable-next-line react/jsx-key
           <If condition={product.category === props.categories.activeCategory.normalizedName}>
             <Card variant="outlined">
               <ListItem key={idx + '1'} >Product: {product.name}</ListItem>
@@ -31,8 +30,8 @@ const Products = (props) => {
       </List>
     </Paper>
     
-  )
-}
+  );
+};
 
 
 // makes sure our global state is added to our regular props values
@@ -41,18 +40,14 @@ const mapStateToProps = state => {
 
   return {
     categories: state.categories,
-    // activeCategory: state.categories.activeCategory,
     products: state.products,
     
-  }
-}
-const mapDispatchToProps = { changeCategory };
+  };
+};
 
-// running a function ( connect() ) which returns another function "higher order component"
-// const higherOrder = connect(mapStateToProps, mapDispatchToProps);
-// export default higherOrder(Counter);
+
+
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
 )(Products);
