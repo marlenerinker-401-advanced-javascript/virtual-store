@@ -1,11 +1,6 @@
 import React from 'react';
-import { Paper, TextField, Box, Typography, List, ListItem, ListItemIcon, ListItemText, Divider } from '@material-ui/core';
-// import { Nav, Navbar}  from 'react-bootstrap';
+import { Paper, Box, Typography } from '@material-ui/core';
 
-// import ToDo from './components/todo/todo.js';
-// import SettingsProvider from './context/settings.js';
-// import Login from './components/auth/login.js';
-// import LoginProvider from './context/auth-context.js';
 
 
 const Footer = () => {
