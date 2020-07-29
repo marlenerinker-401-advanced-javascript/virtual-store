@@ -1,8 +1,9 @@
 /* eslint-disable react/jsx-key */
 import React from 'react';
 import { connect } from 'react-redux';
-import { List, ListItem, Card, Typography, Paper } from '@material-ui/core';
-import { addItem } from '../store/cart.js';
+import { List, ListItem, Card, Typography, Paper, Button } from '@material-ui/core';
+import { addInventory } from '../store/products.js';
+import { removeItem } from '../store/cart.js';
 
 const If = props => {
   return props.condition ? props.children : null;
@@ -12,7 +13,12 @@ const If = props => {
 
 const SimpleCart = (props) => {
 
-  console.log('props from cart: ', props);
+  
+
+  function removeFromCart(product){
+    props.addInventory(product);
+    props.removeItem(product);
+  }
 
   return (
     
@@ -24,6 +30,7 @@ const SimpleCart = (props) => {
           // eslint-disable-next-line react/jsx-key          
           <Card variant="outlined">
             <ListItem key={product.name} >Product: {product.name}</ListItem>
+            <Button variant="outlined" onClick={() => removeFromCart(product)}>Remove</Button>
           </Card>
           
         ))} 
@@ -37,8 +44,7 @@ const SimpleCart = (props) => {
 
 // makes sure our global state is added to our regular props values
 const mapStateToProps = state => {
-  console.log('state from products state', state);
-
+  
   return {
     categories: state.categories,
     products: state.products,
@@ -47,7 +53,7 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = { addItem };
+const mapDispatchToProps = { addInventory, removeItem };
 
 
 

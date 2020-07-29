@@ -19,6 +19,8 @@ const Products = (props) => {
     props.addItem(product);
   }
 
+  
+
   return (
     
     <Paper variant="outlined">

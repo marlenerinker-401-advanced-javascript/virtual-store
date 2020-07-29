@@ -23,7 +23,7 @@ export default (state = initialState, action) => {
   const { type, payload } = action;
 
   switch (type) {
-  case 'REMOVE':
+  case 'DECREASE':
     
     let newProducts = state.map(product => {
       if(product.name === payload.name){
@@ -32,6 +32,16 @@ export default (state = initialState, action) => {
       return product;
     });    
     return newProducts;
+
+  case 'INCREASE':
+  
+    let moreProducts = state.map(product => {
+      if(product.name === payload.name){
+        return {...product, inventory: product.inventory + 1};
+      }
+      return product;
+    });    
+    return moreProducts;
 
   default:
     return state;
@@ -46,7 +56,14 @@ export default (state = initialState, action) => {
 // actions are the functions that components can run themselves
 export const removeInventory = (product) => {
   return {
-    type: 'REMOVE',
+    type: 'DECREASE',
+    payload: product,
+  };
+};
+
+export const addInventory = (product) => {
+  return {
+    type: 'INCREASE',
     payload: product,
   };
 };

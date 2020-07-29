@@ -22,7 +22,6 @@ const useStyles = makeStyles((theme) => ({
 
 
 const Header = (props) => {
-  console.log('props from header: ', props);
   const classes = useStyles();
   return (
   

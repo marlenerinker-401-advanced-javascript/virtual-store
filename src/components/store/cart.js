@@ -13,6 +13,21 @@ export default (state = initialState, action) => {
     
     return [...state, payload];
 
+  case 'REMOVE':
+    // eslint-disable-next-line no-case-declarations
+    let newCart = state;
+    for(let i = 0; i<newCart.length; i++) {
+      if(newCart[i].name === payload.name){
+        newCart.splice(i, 1);
+      }
+      return [...newCart];
+    }
+
+    return newCart;
+    
+    
+
+
   default:
     return state;
   }
@@ -27,6 +42,13 @@ export default (state = initialState, action) => {
 export const addItem = (product) => {
   return {
     type: 'ADD',
+    payload: product,
+  };
+};
+
+export const removeItem = (product) => {
+  return {
+    type: 'REMOVE',
     payload: product,
   };
 };
