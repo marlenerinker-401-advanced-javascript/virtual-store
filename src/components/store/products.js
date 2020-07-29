@@ -2,34 +2,36 @@
 
 
 
+
+
 // Our global state object just for votes
-const initialState = {
-  products: [
-    { category: 'categoryone', name: 'Product One', description: 'fun product', price: '$5.00', inventory: 0},
-    { category: 'categoryone', name: 'Product Two', description: 'fun product', price: '$5.00', inventory: 0},
-    { category: 'categorytwo', name: 'Product Three', description: 'fun product', price: '$5.00', inventory: 0},
-    { category: 'categorytwo', name: 'Product Four', description: 'fun product', price: '$5.00', inventory: 0},
-    { category: 'categorythree', name: 'Product Five', description: 'fun product', price: '$5.00', inventory: 0},
-    { category: 'categorythree', name: 'Product Six', description: 'fun product', price: '$5.00', inventory: 0},
-    { category: 'categoryfour', name: 'Product Seven', description: 'fun product', price: '$5.00', inventory: 0},
-    { category: 'categoryfour', name: 'Product Eight', description: 'fun product', price: '$5.00', inventory: 0},
-  ],
-};
+const initialState = 
+    [
+      { category: 'categoryone', name: 'Product One', description: 'fun product', price: '$5.00', inventory: 10},
+      { category: 'categoryone', name: 'Product Two', description: 'fun product', price: '$5.00', inventory: 0},
+      { category: 'categorytwo', name: 'Product Three', description: 'fun product', price: '$5.00', inventory: 7},
+      { category: 'categorytwo', name: 'Product Four', description: 'fun product', price: '$5.00', inventory: 15},
+      { category: 'categorythree', name: 'Product Five', description: 'fun product', price: '$5.00', inventory: 25},
+      { category: 'categorythree', name: 'Product Six', description: 'fun product', price: '$5.00', inventory: 9},
+      { category: 'categoryfour', name: 'Product Seven', description: 'fun product', price: '$5.00', inventory: 0},
+      { category: 'categoryfour', name: 'Product Eight', description: 'fun product', price: '$5.00', inventory: 30},
+    ];
+
 
 // Reducers, a function that takes an action and produces a new version of state, from a payload and a type.
 export default (state = initialState, action) => {
   const { type, payload } = action;
 
   switch (type) {
-  case 'CHANGE':
-    // for (let i = 0; i < state.products.length; i++) {
-    //   if (state.products[i].category === payload) {
-    //     return {...state, isActive: true};
-    //   }
-    // }
-    console.log('product change is running', payload);
+  case 'REMOVE':
     
-    return state;
+    let newProducts = state.map(product => {
+      if(product.name === payload.name){
+        return {...product, inventory: product.inventory - 1};
+      }
+      return product;
+    });    
+    return newProducts;
 
   default:
     return state;
@@ -42,10 +44,10 @@ export default (state = initialState, action) => {
 
 
 // actions are the functions that components can run themselves
-// export const changeCategory = (category) => {
-//   return {
-//     type: 'CHANGE',
-//     payload: category,
-//   };
-// };
+export const removeInventory = (product) => {
+  return {
+    type: 'REMOVE',
+    payload: product,
+  };
+};
 

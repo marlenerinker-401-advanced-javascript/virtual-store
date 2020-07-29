@@ -6,8 +6,7 @@ import { changeCategory } from '../store/categories.js';
 
 const Categories = (props) => {
 
-  // const { votes, increment } = props;
-  console.log(props.categories);
+  
 
   return (
     <Paper variant="outlined">
@@ -17,7 +16,7 @@ const Categories = (props) => {
           <ListItem key={idx} onClick={() => props.changeCategory(category)}><Button variant="outlined">{category.displayName}</Button></ListItem>
         ))}
       </List>
-      <Typography variant="h5" conponent="h5">Selected category: {props.categories.activeCategory.displayName}</Typography>
+      <Typography variant="h5" component="h5">Selected category: {props.categories.activeCategory.displayName}</Typography>
     </Paper>
   )
 }
@@ -25,7 +24,7 @@ const Categories = (props) => {
 
 // makes sure our global state is added to our regular props values
 const mapStateToProps = state => {
-  console.log('state from map state', state);
+  
 
   return {
     categories: state.categories,
