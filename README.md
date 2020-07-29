@@ -63,3 +63,6 @@ npm start
 
 #### UML
 ![UML Diagram](virtual-store.jpg)
+
+#### Citations
+Got help from Paul Depew and Ashley Biermann with styling using materials-ui
