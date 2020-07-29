@@ -21,9 +21,11 @@ const SimpleCart = (props) => {
   }
 
   return (
+
+    
     
     <Paper variant="outlined">
-      <Typography id="product-title" variant="p" component="p">cart contents</Typography>
+      {/* <Typography id="product-title" variant="p" component="p">cart contents</Typography> */}
       <List>
       
         {props.cart.map((product, idx) => (
@@ -37,6 +39,7 @@ const SimpleCart = (props) => {
        
       </List>
     </Paper>
+    
     
   );
 };

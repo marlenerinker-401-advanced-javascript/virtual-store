@@ -1,4 +1,6 @@
-// Our global state object just for votes
+/* eslint-disable no-case-declarations */
+
+// Our global state object just for the cart
 const initialState = [];
 
     
@@ -14,18 +16,19 @@ export default (state = initialState, action) => {
     return [...state, payload];
 
   case 'REMOVE':
-    // eslint-disable-next-line no-case-declarations
+    
+    
     let newCart = state;
     for(let i = 0; i<newCart.length; i++) {
       if(newCart[i].name === payload.name){
         newCart.splice(i, 1);
+        
       }
       return [...newCart];
     }
-
     return newCart;
     
-    
+  
 
 
   default:
@@ -52,3 +55,5 @@ export const removeItem = (product) => {
     payload: product,
   };
 };
+
+
