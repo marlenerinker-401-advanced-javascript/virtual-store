@@ -4,7 +4,7 @@ This project contains a virtual store application.
 
 ### Author: Marlene Rinker
 
-- [Submission PR](https://github.com/marlenerinker-401-advanced-javascript/virtual-store/pull/1)
+- [Submission PR](https://github.com/marlenerinker-401-advanced-javascript/virtual-store/pull/3)
 <!-- - [Tests Report](https://github.com/marlenerinker-401-advanced-javascript/resty/actions)
 - [GitHub Pages deployment](https://marlenerinker-401-advanced-javascript.github.io/resty/) -->
 

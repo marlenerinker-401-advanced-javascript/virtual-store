@@ -131,9 +131,9 @@ exports[`Product tests renders correctly 1`] = `
   </ul>
   <h5
     className="MuiTypography-root MuiTypography-h5"
-    conponent="h5"
   >
     Selected category: 
+    No category selected
   </h5>
 </div>
 `;

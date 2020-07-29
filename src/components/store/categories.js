@@ -7,7 +7,7 @@ const initialState = {
     { normalizedName: 'categorythree', displayName: 'Category Three', description: 'category three' },
     { normalizedName: 'categoryfour', displayName: 'Category Four', description: 'category four' },
   ],
-  activeCategory: {},
+  activeCategory: {displayName: 'No category selected'},
 };
 
 // Reducers, a function that takes an action and produces a new version of state, from a payload and a type.
