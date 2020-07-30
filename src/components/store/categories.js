@@ -3,7 +3,7 @@ import axios from 'axios';
 // Our global state object just for categories
 const initialState = {
   categories: [],
-  activeCategory: {displayName: 'No category selected'},
+  activeCategory: {},
 };
 
 // Reducers, a function that takes an action and produces a new version of state, from a payload and a type.

@@ -12,10 +12,13 @@ const If = props => {
 };
 
 const useStyles = makeStyles((theme) => ({
-  // heading: {
-  //   display: 'flex',
-  //   paddingLeft: '24px',
-  // },
+  cart: {
+   position: 'fixed',
+   right: '10px',
+    
+    width: 'fit-content',
+    zIndex: '2',
+  },
 
   // list: {
   //   display: 'flex',
@@ -25,17 +28,17 @@ const useStyles = makeStyles((theme) => ({
 
   // },
 
-  // card: {
+  card: {
     
-  //   display: 'flex',
-  //   flexDirection: 'column-reverse',
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  //   alignSelf: 'flex-end',
-  //   paddingRight: '10px',
+    display: 'flex',
+    flexDirection: 'column-reverse',
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
+    alignSelf: 'flex-end',
+    paddingRight: '10px',
     
       
-  // },
+  },
 
   // listItem: {
   //   display: 'inline',
@@ -63,22 +66,24 @@ const SimpleCart = (props) => {
   return (
 
     
-    
-    <Paper variant="outlined">
-      {/* <Typography id="product-title" variant="p" component="p">cart contents</Typography> */}
-      <List className={classes.list}>
+    <div className={classes.cart}>
+      <Paper variant="outlined">
+        {/* <Typography id="product-title" variant="p" component="p">cart contents</Typography> */}
+        <List className={classes.list}>
       
-        {props.cart.map((product, idx) => (
-          // eslint-disable-next-line react/jsx-key          
-          <Card className={classes.card} variant="outlined">
-            <ListItem key={product.name} >Product: {product.name}</ListItem>
-            <Button variant="outlined" onClick={() => removeFromCart(product)}>Remove</Button>
-          </Card>
-          
-        ))} 
+          {props.cart.map((product, idx) => (
+          // eslint-disable-next-line react/jsx-key 
+            <div className={classes.card}>         
+              <Card  variant="outlined">
+                <ListItem key={product.name} >Product: {product.name}</ListItem>
+                <Button variant="outlined" onClick={() => removeFromCart(product)}>Remove</Button>
+              </Card>
+            </div>
+          ))} 
        
-      </List>
-    </Paper>
+        </List>
+      </Paper>
+    </div>
     
     
   );

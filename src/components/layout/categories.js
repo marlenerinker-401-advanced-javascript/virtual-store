@@ -6,6 +6,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import { changeCategory, fetchCategories } from '../store/categories.js';
 
 const useStyles = makeStyles((theme) => ({
+
+  categoriesRoot: {
+    width: '65vw',
+  },
+
   heading: {
     display: 'flex',
     paddingLeft: '24px',
@@ -40,18 +45,20 @@ const Categories = (props) => {
   const classes = useStyles();
 
   return (
-    <Paper variant="outlined">
-      <Typography className={classes.heading} variant="h4" component="h4">Choose a category</Typography>
-      <List className={classes.list}>
-        {props.categories.categories.map((category, idx) => (
-          <ListItem className={classes.listItem} key={idx} onClick={() => props.changeCategory(category)}><Button variant="outlined">{category.displayName}</Button></ListItem>
-        ))}
-      </List>
-      <div className={classes.details}>
-      <Typography variant="h5" component="h5"> {props.categories.activeCategory.displayName || 'No category selected'}</Typography>
+    <div className={classes.categoriesRoot}>
+      <Paper variant="outlined">
+        <Typography className={classes.heading} variant="h4" component="h4">Choose a category</Typography>
+        <List className={classes.list}>
+          {props.categories.categories.map((category, idx) => (
+            <ListItem className={classes.listItem} key={idx} onClick={() => props.changeCategory(category)}><Button variant="outlined">{category.displayName}</Button></ListItem>
+          ))}
+        </List>
+        <div className={classes.details}>
+          <Typography variant="h5" component="h5"> {props.categories.activeCategory.displayName || 'No category selected'}</Typography>
       
-      </div>
-    </Paper>
+        </div>
+      </Paper>
+    </div>
   )
 }
 
