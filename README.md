@@ -4,7 +4,7 @@ This project contains a virtual store application.
 
 ### Author: Marlene Rinker
 
-- [Submission PR](https://github.com/marlenerinker-401-advanced-javascript/virtual-store/pull/3)
+- [Submission PR](https://github.com/marlenerinker-401-advanced-javascript/virtual-store/pull/5)
 <!-- - [Tests Report](https://github.com/marlenerinker-401-advanced-javascript/resty/actions)
 - [GitHub Pages deployment](https://marlenerinker-401-advanced-javascript.github.io/resty/) -->
 
@@ -39,7 +39,9 @@ None at this time
 - redux-devtools-extension
 - @material-ui/core
 - @material-ui/icons
-<!-- - axios -->
+- axios
+- redux-thunk
+- redux-mock-store
 <!-- - react-bootstrap-4-pagination -->
 <!-- - dotenv -->
 <!-- - react-cookies -->
@@ -58,6 +60,10 @@ npm start
 - Assertions Made:
   - Products will render correctly
   - Categories will render correctly
+  - Category actions work (API must be up)
+  - Category reducers work (API must be up)
+  - Product actions work (API must be up)
+  - Product reducers work (API must be up)
 
 
 

@@ -1,13 +1,9 @@
 /* eslint-disable no-case-declarations */
-// Our global state object just for votes
+import axios from 'axios';
+// Our global state object just for categories
 const initialState = {
-  categories: [
-    { normalizedName: 'categoryone', displayName: 'Category One', description: 'category one' },
-    { normalizedName: 'categorytwo', displayName: 'Category Two ', description: 'category two' },
-    { normalizedName: 'categorythree', displayName: 'Category Three', description: 'category three' },
-    { normalizedName: 'categoryfour', displayName: 'Category Four', description: 'category four' },
-  ],
-  activeCategory: {displayName: 'No category selected'},
+  categories: [],
+  activeCategory: {},
 };
 
 // Reducers, a function that takes an action and produces a new version of state, from a payload and a type.
@@ -18,6 +14,9 @@ export default (state = initialState, action) => {
   case 'CHANGE':
   
     return {...state, activeCategory: payload};
+
+  case 'FETCH_CATEGORIES':
+    return {...state, categories: payload};
 
   default:
     return state;
@@ -33,3 +32,10 @@ export const changeCategory = (category) => {
   };
 };
 
+export const fetchCategories = () => async (dispatch) => {
+  const response = await axios.get('http://localhost:3000/categories');
+  dispatch({
+    type: 'FETCH_CATEGORIES',
+    payload: response.data,
+  });
+};
