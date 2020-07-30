@@ -1,21 +1,13 @@
 /* eslint-disable no-case-declarations */
+import axios from 'axios';
 
 
 
 
 
 // Our global state object just for votes
-const initialState = 
-    [
-      { category: 'categoryone', name: 'Product One', description: 'fun product', price: '$5.00', inventory: 10},
-      { category: 'categoryone', name: 'Product Two', description: 'fun product', price: '$5.00', inventory: 0},
-      { category: 'categorytwo', name: 'Product Three', description: 'fun product', price: '$5.00', inventory: 7},
-      { category: 'categorytwo', name: 'Product Four', description: 'fun product', price: '$5.00', inventory: 15},
-      { category: 'categorythree', name: 'Product Five', description: 'fun product', price: '$5.00', inventory: 25},
-      { category: 'categorythree', name: 'Product Six', description: 'fun product', price: '$5.00', inventory: 9},
-      { category: 'categoryfour', name: 'Product Seven', description: 'fun product', price: '$5.00', inventory: 0},
-      { category: 'categoryfour', name: 'Product Eight', description: 'fun product', price: '$5.00', inventory: 30},
-    ];
+const initialState = [];
+   
 
 
 // Reducers, a function that takes an action and produces a new version of state, from a payload and a type.
@@ -43,6 +35,9 @@ export default (state = initialState, action) => {
     });    
     return moreProducts;
 
+  case 'FETCH_PRODUCTS':
+    return payload;
+
   default:
     return state;
   }
@@ -66,5 +61,13 @@ export const addInventory = (product) => {
     type: 'INCREASE',
     payload: product,
   };
+};
+
+export const fetchProducts = () => async (dispatch) => {
+  const response = await axios.get('http://localhost:3000/products');
+  dispatch({
+    type: 'FETCH_PRODUCTS',
+    payload: response.data,
+  });
 };
 

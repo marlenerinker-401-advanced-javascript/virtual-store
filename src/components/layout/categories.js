@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { List, ListItem, Button, Typography, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { changeCategory } from '../store/categories.js';
+import { changeCategory, fetchCategories } from '../store/categories.js';
 
 const useStyles = makeStyles((theme) => ({
   heading: {
@@ -32,6 +32,10 @@ const useStyles = makeStyles((theme) => ({
 
 const Categories = (props) => {
 
+  useEffect(() => {
+    props.fetchCategories(); 
+  }, []);
+
   
   const classes = useStyles();
 
@@ -59,9 +63,9 @@ const mapStateToProps = state => {
   return {
     categories: state.categories,
     activeCategory: state.categories.activeCategory,
-  }
-}
-const mapDispatchToProps = { changeCategory };
+  };
+};
+const mapDispatchToProps = { changeCategory, fetchCategories };
 
 // running a function ( connect() ) which returns another function "higher order component"
 // const higherOrder = connect(mapStateToProps, mapDispatchToProps);

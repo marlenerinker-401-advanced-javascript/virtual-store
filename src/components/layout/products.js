@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { List, ListItem, Card, Typography, Paper, Button } from '@material-ui/core';
-import { removeInventory } from '../store/products.js';
+import { removeInventory, fetchProducts } from '../store/products.js';
 import { addItem } from '../store/cart.js';
 
 
@@ -11,6 +11,10 @@ const If = props => {
 };
 
 const Products = (props) => {
+
+  useEffect(() => {
+    props.fetchProducts(); 
+  }, []);
 
   
 
@@ -55,7 +59,7 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = { removeInventory, addItem };
+const mapDispatchToProps = { removeInventory, addItem, fetchProducts };
 
 
 
