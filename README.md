@@ -26,7 +26,7 @@ None at this time
 - react
 - react-dom
 - react-scripts
-<!-- - react-router-dom -->
+- react-router-dom
 <!-- - uuid -->
 <!-- - react-jsonschema-form -->
 <!-- - react-bootstrap -->

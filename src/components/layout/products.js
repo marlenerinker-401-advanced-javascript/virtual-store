@@ -2,8 +2,10 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { List, ListItem, Card, Typography, Paper, Button } from '@material-ui/core';
 import { removeInventory, fetchProducts } from '../store/products.js';
+import { getOneProduct } from '../store/product-details.js';
 import { addItem } from '../store/cart.js';
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 
 
 
@@ -58,6 +60,8 @@ const Products = (props) => {
 
   
 
+  
+
   return (
     
     <div className={classes.productsRoot}>
@@ -71,7 +75,10 @@ const Products = (props) => {
                 <ListItem key={idx + '1'} >Product: {product.name}</ListItem>
                 <ListItem key={idx + '2'} >Description: {product.description}</ListItem>
                 <ListItem key={idx + '3'} >Price: {product.price}</ListItem>
-                <ListItem key={idx + '3'} >In Stock: {product.inventory}</ListItem>
+                <ListItem key={idx + '4'} >In Stock: {product.inventory}</ListItem>
+                <Link to="/products">
+                  <Button variant="outlined"  onClick={() => props.getOneProduct(product)}>View Details</Button>
+                </Link>
                 <Button variant="outlined" onClick={() => addToCart(product)}>Add to Cart</Button>
               </Card>
             </If>
@@ -94,7 +101,7 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = { removeInventory, addItem, fetchProducts };
+const mapDispatchToProps = { removeInventory, addItem, fetchProducts, getOneProduct };
 
 
 

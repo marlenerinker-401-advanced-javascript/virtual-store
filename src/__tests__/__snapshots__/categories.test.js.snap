@@ -2,138 +2,29 @@
 
 exports[`Product tests renders correctly 1`] = `
 <div
-  className="MuiPaper-root MuiPaper-outlined MuiPaper-rounded"
+  className="makeStyles-categoriesRoot-1"
 >
-  <h4
-    className="MuiTypography-root MuiTypography-h4"
+  <div
+    className="MuiPaper-root MuiPaper-outlined MuiPaper-rounded"
   >
-    Choose a category
-  </h4>
-  <ul
-    className="MuiList-root MuiList-padding"
-  >
-    <li
-      className="MuiListItem-root MuiListItem-gutters"
-      disabled={false}
-      onClick={[Function]}
+    <h4
+      className="MuiTypography-root makeStyles-heading-2 MuiTypography-h4"
     >
-      <button
-        className="MuiButtonBase-root MuiButton-root MuiButton-outlined"
-        disabled={false}
-        onBlur={[Function]}
-        onDragLeave={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        tabIndex={0}
-        type="button"
-      >
-        <span
-          className="MuiButton-label"
-        >
-          Category One
-        </span>
-      </button>
-    </li>
-    <li
-      className="MuiListItem-root MuiListItem-gutters"
-      disabled={false}
-      onClick={[Function]}
+      Choose a category
+    </h4>
+    <ul
+      className="MuiList-root makeStyles-list-3 MuiList-padding"
+    />
+    <div
+      className="makeStyles-details-5"
     >
-      <button
-        className="MuiButtonBase-root MuiButton-root MuiButton-outlined"
-        disabled={false}
-        onBlur={[Function]}
-        onDragLeave={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        tabIndex={0}
-        type="button"
+      <h5
+        className="MuiTypography-root MuiTypography-h5"
       >
-        <span
-          className="MuiButton-label"
-        >
-          Category Two 
-        </span>
-      </button>
-    </li>
-    <li
-      className="MuiListItem-root MuiListItem-gutters"
-      disabled={false}
-      onClick={[Function]}
-    >
-      <button
-        className="MuiButtonBase-root MuiButton-root MuiButton-outlined"
-        disabled={false}
-        onBlur={[Function]}
-        onDragLeave={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        tabIndex={0}
-        type="button"
-      >
-        <span
-          className="MuiButton-label"
-        >
-          Category Three
-        </span>
-      </button>
-    </li>
-    <li
-      className="MuiListItem-root MuiListItem-gutters"
-      disabled={false}
-      onClick={[Function]}
-    >
-      <button
-        className="MuiButtonBase-root MuiButton-root MuiButton-outlined"
-        disabled={false}
-        onBlur={[Function]}
-        onDragLeave={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        tabIndex={0}
-        type="button"
-      >
-        <span
-          className="MuiButton-label"
-        >
-          Category Four
-        </span>
-      </button>
-    </li>
-  </ul>
-  <h5
-    className="MuiTypography-root MuiTypography-h5"
-  >
-    Selected category: 
-    No category selected
-  </h5>
+         
+        No category selected
+      </h5>
+    </div>
+  </div>
 </div>
 `;

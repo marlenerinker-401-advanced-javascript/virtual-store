@@ -4,6 +4,12 @@ import { Paper, Toolbar, Typography, AppBar } from '@material-ui/core';
 import { ShoppingCartOutlined } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 
+import { Link } from 'react-router-dom';
+
+
+
+
+
 
 
 
@@ -12,8 +18,17 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
+    paddingLeft: '50px',
     
   },
+
+  nav: {
+    display: 'flex',
+    
+   
+
+  },
+
   cart: {
     
     display: 'flex',
@@ -37,13 +52,21 @@ const Header = (props) => {
   
     <Paper>
       <AppBar position="static">
+        <div className={classes.nav}>
+              <Link to="/">Home</Link>
+            </div>
         <div className={classes.title}>
           <Toolbar>
             <Typography id="title" variant="h3" component="h1" gutterBottom>THE 401 STORE </Typography>
           </Toolbar>
+          
+            
+         
           <div className={classes.cart}>
+          <Link to="/cart">
             <ShoppingCartOutlined />
             <Typography variant="p" component="p">Cart ({props.cart.length})</Typography>
+            </Link>
           </div>
         </div>
       </AppBar>
