@@ -25,8 +25,20 @@ const useStyles = makeStyles((theme) => ({
   nav: {
     display: 'flex',
     
+    
    
 
+  },
+
+  links: {
+    textDecoration: 'none',
+    color: '#fff',
+  },
+  '&:visited': {
+    color: '#fff',
+  },
+  '&:hover': {
+    color: '#fa2',
   },
 
   cart: {
@@ -53,7 +65,7 @@ const Header = (props) => {
     <Paper>
       <AppBar position="static">
         <div className={classes.nav}>
-              <Link to="/">Home</Link>
+              <Link className={classes.links} to="/">Home</Link>
             </div>
         <div className={classes.title}>
           <Toolbar>
@@ -63,7 +75,7 @@ const Header = (props) => {
             
          
           <div className={classes.cart}>
-          <Link to="/cart">
+          <Link className={classes.links} to="/cart">
             <ShoppingCartOutlined />
             <Typography variant="p" component="p">Cart ({props.cart.length})</Typography>
             </Link>

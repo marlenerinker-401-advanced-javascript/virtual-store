@@ -37,6 +37,12 @@ const useStyles = makeStyles((theme) => ({
     
   },
 
+  links: {
+    textDecoration: 'none',
+  },
+
+  
+
   details: {
     display: 'flex',
   },
@@ -76,7 +82,7 @@ const Products = (props) => {
                 <ListItem key={idx + '2'} >Description: {product.description}</ListItem>
                 <ListItem key={idx + '3'} >Price: {product.price}</ListItem>
                 <ListItem key={idx + '4'} >In Stock: {product.inventory}</ListItem>
-                <Link to="/products">
+                <Link className={classes.links} to="/products">
                   <Button variant="outlined"  onClick={() => props.getOneProduct(product)}>View Details</Button>
                 </Link>
                 <Button variant="outlined" onClick={() => addToCart(product)}>Add to Cart</Button>
