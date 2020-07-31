@@ -38,6 +38,7 @@ export default (state = initialState, action) => {
   case 'FETCH_PRODUCTS':
     return payload;
 
+
   default:
     return state;
   }
@@ -69,21 +70,30 @@ export const fetchProducts = () => async (dispatch) => {
     type: 'FETCH_PRODUCTS',
     payload: response.data,
   });
-
-  // export const removeInventory = (product) => async (dispatch) => {
-  //   product.inventory = product.inventory-1;
-  //   //calculate the inventory for product and replace it, then send product, then run a fetch, then return response.data
-  //   const response = await axios( {
-  //     url: `http://localhost:3000/products/${product.id}`,
-  //     method: 'put',
-  //     mode: 'cors',
-  //     cache: 'no-cache',
-  //     headers: { 'Content-Type': 'application/json' },
-  //     data: JSON.stringify(product),
-  //   });
-  //   dispatch({
-  //     type: 'FETCH_PRODUCTS',
-  //     payload: response.data,
-  //   });
 };
 
+
+export const getOneProduct = (product) => async (dispatch) => {
+  const response = await axios.get(`http://localhost:3000/products/${product.id}`);
+  dispatch({
+    type: 'GET_PRODUCT',
+    payload: response.data,
+  });
+};
+
+// export const removeInventory = (product) => async (dispatch) => {
+//   product.inventory = product.inventory-1;
+//   //calculate the inventory for product and replace it, then send product, then run a fetch, then return response.data
+//   const response = await axios( {
+//     url: `http://localhost:3000/products/${product.id}`,
+//     method: 'put',
+//     mode: 'cors',
+//     cache: 'no-cache',
+//     headers: { 'Content-Type': 'application/json' },
+//     data: JSON.stringify(product),
+//   });
+//   dispatch({
+//     type: 'FETCH_PRODUCTS',
+//     payload: response.data,
+//   });
+// };
