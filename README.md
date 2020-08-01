@@ -72,3 +72,4 @@ npm start
 
 #### Citations
 Got help from Paul Depew and Ashley Biermann with styling using materials-ui
+Used template code from materials-ui to create the checkout form

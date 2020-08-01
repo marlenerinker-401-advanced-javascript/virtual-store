@@ -159,7 +159,10 @@ const ShoppingCart = (props) => {
                   label="Same as billing address"
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid item xs={12} sm={6}>
+                <Button variant="outlined" onClick={() => setCheckout('')}>Back</Button>
+              </Grid>
+              <Grid item xs={12} sm={6}>
                 <Button variant="outlined" onClick={(e) => {e.preventDefault();
                   if(sameAsShipping === true){
                     setCheckout('payment');
@@ -247,7 +250,10 @@ const ShoppingCart = (props) => {
                   autoComplete="billing country"
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid item xs={12} sm={6}>
+                <Button variant="outlined" onClick={() => setCheckout('shipping')}>Back</Button>
+              </Grid>
+              <Grid item xs={12} sm={6}>
                 <Button variant="outlined" onClick={(e) => {e.preventDefault();
                   setCheckout('payment');}}>Next</Button>
               </Grid>
@@ -285,7 +291,14 @@ const ShoppingCart = (props) => {
                   autoComplete="cc-csc"
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid item xs={12} sm={6}>
+                <Button variant="outlined" onClick={(e) => {e.preventDefault();
+                  if(sameAsShipping === true){
+                    setCheckout('shipping');
+                  }else {
+                    setCheckout('billing');}}}>Back</Button>
+              </Grid>
+              <Grid item xs={12} sm={6}>
                 <Button variant="outlined" onClick={(e) => {
                   e.preventDefault();
                   setCheckout('purchase');
