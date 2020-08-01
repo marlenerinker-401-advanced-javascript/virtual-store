@@ -13,20 +13,14 @@ const If = props => {
 
 const useStyles = makeStyles((theme) => ({
   cart: {
-   position: 'fixed',
-   right: '10px',
+    position: 'fixed',
+    right: '10px',
     
     width: 'fit-content',
     zIndex: '2',
   },
 
-  // list: {
-  //   display: 'flex',
-  //   alignItem: 'center',
-  //   justifyContent: 'space-between',
-  //   paddingLeft: '10px',
-
-  // },
+  
 
   card: {
     
@@ -40,14 +34,7 @@ const useStyles = makeStyles((theme) => ({
       
   },
 
-  // listItem: {
-  //   display: 'inline',
-    
-  // },
-
-  // details: {
-  //   display: 'flex',
-  // },
+  
 
 }));
 

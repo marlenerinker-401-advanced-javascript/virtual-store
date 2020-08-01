@@ -28,7 +28,8 @@ export default (state = initialState, action) => {
     }
     return newCart;
     
-  
+  case 'CLEAR':
+    return initialState;
 
 
   default:
@@ -53,6 +54,12 @@ export const removeItem = (product) => {
   return {
     type: 'REMOVE',
     payload: product,
+  };
+};
+
+export const clearCart = () => {
+  return {
+    type: 'CLEAR',
   };
 };
 
