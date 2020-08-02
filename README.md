@@ -27,10 +27,6 @@ None at this time
 - react-dom
 - react-scripts
 - react-router-dom
-<!-- - uuid -->
-<!-- - react-jsonschema-form -->
-<!-- - react-bootstrap -->
-<!-- - bootstrap -->
 - enzyme
 - enzyme-adapter-react-16
 - react-test-renderer 
@@ -42,10 +38,8 @@ None at this time
 - axios
 - redux-thunk
 - redux-mock-store
-<!-- - react-bootstrap-4-pagination -->
-<!-- - dotenv -->
-<!-- - react-cookies -->
-<!-- - jsonwebtoken -->
+- @reduxjs/toolkit
+
 
 
 

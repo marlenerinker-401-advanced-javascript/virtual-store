@@ -295,6 +295,7 @@ const ShoppingCart = (props) => {
                 <Button variant="outlined" onClick={(e) => {e.preventDefault();
                   if(sameAsShipping === true){
                     setCheckout('shipping');
+                    setSameAsShipping(false);
                   }else {
                     setCheckout('billing');}}}>Back</Button>
               </Grid>
