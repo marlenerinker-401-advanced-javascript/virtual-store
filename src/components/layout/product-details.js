@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { List, ListItem, Card, Typography, Paper, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { removeInventory } from '../store/products.js';
+import { addItem } from '../store/cart.js';
 
 
 
@@ -44,6 +46,10 @@ const ProductDetails = (props) => {
   
 
   const classes = useStyles();
+  function addToCart(product){
+    props.removeInventory(product);
+    props.addItem(product);
+  }
 
   
 
@@ -55,8 +61,9 @@ const ProductDetails = (props) => {
         <Card variant="outlined">
           <ListItem>Product: {props.details.name}</ListItem>
           <ListItem>Description: {props.details.description}</ListItem>
-          <ListItem>Price: {props.details.price}</ListItem>
+          <ListItem>Price: ${props.details.price}</ListItem>
           <ListItem>In Stock: {props.details.inventory}</ListItem>
+          <Button variant="outlined" onClick={() => addToCart(props.details)}>Add to Cart</Button>
         </Card>
         <Card variant="outlined">
           <Typography variant="h5" component="h5">Coming Soon</Typography>
@@ -82,6 +89,8 @@ const mapStateToProps = state => {
   };
 };
 
+const dispatchStateToProps = { removeInventory, addItem };
+
 
 
 
@@ -89,5 +98,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  null,
+  dispatchStateToProps,
 )(ProductDetails);

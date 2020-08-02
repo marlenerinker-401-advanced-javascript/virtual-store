@@ -80,7 +80,7 @@ const Products = (props) => {
               <Card variant="outlined">
                 <ListItem key={idx + '1'} >Product: {product.name}</ListItem>
                 <ListItem key={idx + '2'} >Description: {product.description}</ListItem>
-                <ListItem key={idx + '3'} >Price: {product.price}</ListItem>
+                <ListItem key={idx + '3'} >Price: ${product.price}</ListItem>
                 <ListItem key={idx + '4'} >In Stock: {product.inventory}</ListItem>
                 <Link className={classes.links} to="/products">
                   <Button variant="outlined"  onClick={() => props.getOneProduct(product)}>View Details</Button>
